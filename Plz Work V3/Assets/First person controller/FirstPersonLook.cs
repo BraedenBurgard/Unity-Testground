@@ -29,7 +29,12 @@ public class FirstPersonLook : MonoBehaviour
         currentMouseLook.y = Mathf.Clamp(currentMouseLook.y, -90, 90);
 
         // Rotate camera and controller.
-        transform.localRotation = Quaternion.AngleAxis(-currentMouseLook.y, Vector3.right);
-        character.localRotation = Quaternion.AngleAxis(currentMouseLook.x, Vector3.up);
+       transform.localRotation = Quaternion.AngleAxis(-currentMouseLook.y, Vector3.right);
+       character.localRotation = Quaternion.AngleAxis(currentMouseLook.x, Vector3.up);
+        /*GetComponent<Camera>().transform.eulerAngles = new Vector3(
+          -currentMouseLook.y,
+          currentMouseLook.x,
+          0                   );
+        */
     }
 }
