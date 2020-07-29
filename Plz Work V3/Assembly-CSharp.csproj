@@ -43,6 +43,7 @@
      <Compile Include="Assets\First person controller\Components\Zoom.cs" />
      <Compile Include="Assets\First person controller\FirstPersonLook.cs" />
      <Compile Include="Assets\First person controller\FirstPersonMovement.cs" />
+     <Compile Include="Assets\Projectile.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
