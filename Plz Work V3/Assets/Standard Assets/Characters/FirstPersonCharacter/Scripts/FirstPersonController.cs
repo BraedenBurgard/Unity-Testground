@@ -151,7 +151,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     else if(lastMove.x < 0) {m_MoveDir.x = lastMove.x + (Time.fixedDeltaTime * groundFriction * XandZ.x);}
                     else {m_MoveDir.x = 0;}
 
-                    
+                    if(lastMove.z > 0) {m_MoveDir.z = lastMove.z - (Time.fixedDeltaTime * groundFriction * XandZ.y);}
+                    else if(lastMove.z < 0) {m_MoveDir.z = lastMove.z + (Time.fixedDeltaTime * groundFriction * XandZ.y);}
+                    else {m_MoveDir.z = 0;}
                 }
 
                 //limit max speed
