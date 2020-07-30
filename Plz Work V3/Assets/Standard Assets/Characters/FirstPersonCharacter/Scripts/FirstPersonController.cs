@@ -12,10 +12,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
     public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private float max_Normal_Airspeed;
+        [SerializeField] private float max_Normal_Groundspeed;
         [SerializeField] private float air_Control;
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
+        [SerializeField] private float groundAcceleration;
+        [SerializeField] private float groundFriction;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -118,16 +121,49 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.z = desiredMove.z*speed;
 
             //EDITED HERE***********
+            //create acceleration airborn
             if(!m_CharacterController.isGrounded)
             {
                 m_MoveDir.x = lastMove.x + (m_MoveDir.x * Time.fixedDeltaTime * air_Control);
                 m_MoveDir.z = lastMove.z + (m_MoveDir.z * Time.fixedDeltaTime * air_Control);
 
-                //limit max speed. Not made to be realistic, but more fun
-                if(m_MoveDir.x > max_Normal_Airspeed) {m_MoveDir.x = lastMove.x;}
-                if(m_MoveDir.z > max_Normal_Airspeed) {m_MoveDir.z = lastMove.z;}
+                //limit max speed
+                if(Mathf.Abs(m_MoveDir.x) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.x) > Mathf.Abs(lastMove.x)) 
+                    {m_MoveDir.x = lastMove.x;}
+                if(Mathf.Abs(m_MoveDir.z) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.z) > Mathf.Abs(lastMove.z)) 
+                    {m_MoveDir.z = lastMove.z;}
             }
+            //create acceleration grounded
+            else
+            {
+                //friction is annoying
+                bool accelerating = false;
+                if(m_MoveDir.x != 0 && lastMove.x < max_Normal_Groundspeed) {m_MoveDir.x = lastMove.x + (m_MoveDir.x * Time.fixedDeltaTime * groundAcceleration); accelerating = true;}
+                if(m_MoveDir.z != 0 && lastMove.z < max_Normal_Groundspeed) {m_MoveDir.z = lastMove.z + (m_MoveDir.z * Time.fixedDeltaTime * groundAcceleration); accelerating = true;}
+                if(!accelerating)
+                {
+                    Vector2 XandZ;
+                    XandZ.x = lastMove.x;
+                    XandZ.y = lastMove.z;
+                    Vector2.Normalize(XandZ);
+
+                    if(lastMove.x > 0) {m_MoveDir.x = lastMove.x - (Time.fixedDeltaTime * groundFriction * XandZ.x);}
+                    else if(lastMove.x < 0) {m_MoveDir.x = lastMove.x + (Time.fixedDeltaTime * groundFriction * XandZ.x);}
+                    else {m_MoveDir.x = 0;}
+
+                    
+                }
+
+                //limit max speed
+                if(Mathf.Abs(m_MoveDir.x) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.x) > Mathf.Abs(lastMove.x)) 
+                    {m_MoveDir.x = lastMove.x;}
+                if(Mathf.Abs(m_MoveDir.z) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.z) > Mathf.Abs(lastMove.z)) 
+                    {m_MoveDir.z = lastMove.z;}
+            }
+             
             //END EDIT
+
+
 
             if (m_CharacterController.isGrounded)
             {

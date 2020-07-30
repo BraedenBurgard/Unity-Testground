@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\CharacterControls.cs" />
+     <Compile Include="Assets\Explosion.cs" />
      <Compile Include="Assets\First person controller\Components\Crouch.cs" />
      <Compile Include="Assets\First person controller\Components\GroundCheck.cs" />
      <Compile Include="Assets\First person controller\Components\Jump.cs" />
