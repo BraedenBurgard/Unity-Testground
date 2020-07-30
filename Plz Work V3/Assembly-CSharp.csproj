@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\CharacterControls.cs" />
+     <Compile Include="Assets\Explode.cs" />
      <Compile Include="Assets\Explosion.cs" />
      <Compile Include="Assets\First person controller\Components\Crouch.cs" />
      <Compile Include="Assets\First person controller\Components\GroundCheck.cs" />
@@ -54,6 +55,7 @@
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+     <Compile Include="Assets\TestTrigger.cs" />
      <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="UnityEngine">

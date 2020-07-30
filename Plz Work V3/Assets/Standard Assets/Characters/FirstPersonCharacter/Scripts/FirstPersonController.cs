@@ -11,6 +11,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+        [SerializeField] private float bounceSpeedPreservation;
         [SerializeField] private float max_Normal_Airspeed;
         [SerializeField] private float max_Normal_Groundspeed;
         [SerializeField] private float air_Control;
@@ -34,6 +35,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        private bool bounce = false;
+        private Vector3 lastMove;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -78,12 +81,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 StartCoroutine(m_JumpBob.DoBobCycle());
                 PlayLandingSound();
-                m_MoveDir.y = 0f;
+                //m_MoveDir.y = 0f;
                 m_Jumping = false;
             }
             if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
             {
-                m_MoveDir.y = 0f;
+                //m_MoveDir.y = 0f;
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
@@ -100,6 +103,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
+
+            Debug.Log(lastMove.x + " " + lastMove.y + " " + lastMove.z);
+
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -112,62 +118,80 @@ namespace UnityStandardAssets.Characters.FirstPerson
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
             //EDITED HERE****************
+
+
+
+
+            /*
             Vector3 lastMove;
             lastMove.x = m_MoveDir.x;
             lastMove.z = m_MoveDir.z;
             //END EDIT
+            */
 
+            lastMove.x = m_MoveDir.x;
+            lastMove.y = m_MoveDir.y;
+            lastMove.z = m_MoveDir.z;
+
+
+            //ignore movement input if move direction was set by Bounce()
+            if(!bounce)
+            {
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
+            }
 
-            //EDITED HERE***********
-            //create acceleration airborn
-            if(!m_CharacterController.isGrounded)
+            if(!m_CharacterController.isGrounded || bounce)
             {
                 m_MoveDir.x = lastMove.x + (m_MoveDir.x * Time.fixedDeltaTime * air_Control);
                 m_MoveDir.z = lastMove.z + (m_MoveDir.z * Time.fixedDeltaTime * air_Control);
 
                 //limit max speed
+                /*
                 if(Mathf.Abs(m_MoveDir.x) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.x) > Mathf.Abs(lastMove.x)) 
                     {m_MoveDir.x = lastMove.x;}
                 if(Mathf.Abs(m_MoveDir.z) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.z) > Mathf.Abs(lastMove.z)) 
                     {m_MoveDir.z = lastMove.z;}
+                */
             }
+
+
+            /*
+            //EDITED HERE***********
+            //create acceleration airborn
+            
             //create acceleration grounded
             else
             {
-                //friction is annoying
-                bool accelerating = false;
-                if(m_MoveDir.x != 0 && lastMove.x < max_Normal_Groundspeed) {m_MoveDir.x = lastMove.x + (m_MoveDir.x * Time.fixedDeltaTime * groundAcceleration); accelerating = true;}
-                if(m_MoveDir.z != 0 && lastMove.z < max_Normal_Groundspeed) {m_MoveDir.z = lastMove.z + (m_MoveDir.z * Time.fixedDeltaTime * groundAcceleration); accelerating = true;}
-                if(!accelerating)
-                {
-                    Vector2 XandZ;
-                    XandZ.x = lastMove.x;
-                    XandZ.y = lastMove.z;
-                    Vector2.Normalize(XandZ);
+               //round lastMove to 0 if it's close
+                if(lastMove.x < 1 && lastMove.x > -1) {lastMove.x = 0;}
+                if(lastMove.z < 1 && lastMove.z > -1) {lastMove.z = 0;}
 
-                    if(lastMove.x > 0) {m_MoveDir.x = lastMove.x - (Time.fixedDeltaTime * groundFriction * XandZ.x);}
-                    else if(lastMove.x < 0) {m_MoveDir.x = lastMove.x + (Time.fixedDeltaTime * groundFriction * XandZ.x);}
-                    else {m_MoveDir.x = 0;}
+                if(m_MoveDir.x != 0) {m_MoveDir.x = lastMove.x + (m_MoveDir.x * Time.fixedDeltaTime * groundAcceleration);}
+                else if(lastMove.x > 0) {m_MoveDir.x = lastMove.x - (Time.fixedDeltaTime * groundFriction);}
+                else if(lastMove.x < 0) {m_MoveDir.x = lastMove.x + (Time.fixedDeltaTime * groundFriction);}
+                else {m_MoveDir.x = 0;}
 
-                    if(lastMove.z > 0) {m_MoveDir.z = lastMove.z - (Time.fixedDeltaTime * groundFriction * XandZ.y);}
-                    else if(lastMove.z < 0) {m_MoveDir.z = lastMove.z + (Time.fixedDeltaTime * groundFriction * XandZ.y);}
-                    else {m_MoveDir.z = 0;}
-                }
+                if(m_MoveDir.z != 0) {m_MoveDir.z = lastMove.z + (m_MoveDir.z * Time.fixedDeltaTime * groundAcceleration);}
+                else if(lastMove.z > 0) {m_MoveDir.z = lastMove.z - (Time.fixedDeltaTime * groundFriction);}
+                else if(lastMove.z < 0) {m_MoveDir.z = lastMove.z + (Time.fixedDeltaTime * groundFriction);}
+                else {m_MoveDir.z = 0;}
 
                 //limit max speed
-                if(Mathf.Abs(m_MoveDir.x) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.x) > Mathf.Abs(lastMove.x)) 
+                
+                if(Mathf.Abs(m_MoveDir.x) > max_Normal_Groundspeed && Mathf.Abs(m_MoveDir.x) > Mathf.Abs(lastMove.x)) 
                     {m_MoveDir.x = lastMove.x;}
-                if(Mathf.Abs(m_MoveDir.z) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.z) > Mathf.Abs(lastMove.z)) 
+                if(Mathf.Abs(m_MoveDir.z) > max_Normal_Groundspeed && Mathf.Abs(m_MoveDir.z) > Mathf.Abs(lastMove.z)) 
                     {m_MoveDir.z = lastMove.z;}
+                
+                //if(Vector3.Dot(Transform.forward, m_MoveDir) > max_Normal_Groundspeed)
             }
-             
+             */
             //END EDIT
 
 
 
-            if (m_CharacterController.isGrounded)
+            if (m_CharacterController.isGrounded && !bounce)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
@@ -189,6 +213,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
+
+            if(bounce) {bounce = false;}
         }
 
 
@@ -201,6 +227,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void ProgressStepCycle(float speed)
         {
+            /*
             if (m_CharacterController.velocity.sqrMagnitude > 0 && (m_Input.x != 0 || m_Input.y != 0))
             {
                 m_StepCycle += (m_CharacterController.velocity.magnitude + (speed*(m_IsWalking ? 1f : m_RunstepLenghten)))*
@@ -215,6 +242,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle + m_StepInterval;
 
             PlayFootStepAudio();
+            */
         }
 
 
@@ -312,6 +340,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        public void Bounce(Vector3 newMoveDir)
+        {
+            bounce = true;
+            m_MoveDir.y = 0;
+            m_MoveDir = newMoveDir + m_MoveDir*bounceSpeedPreservation;
         }
     }
 }
