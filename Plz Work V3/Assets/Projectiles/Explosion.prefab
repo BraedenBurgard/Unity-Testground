@@ -57,4 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafefe8b486b47c48862a7b1044f0989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  createThis: {fileID: 1570927096764274, guid: 643639841fb531e4ba8097fed4eb9ac7, type: 3}
+  Spawnpoint: {fileID: 5087539536232495674}
+  explosionRadius: 5
   boopStrength: 10
+  environmentalDamage: 1

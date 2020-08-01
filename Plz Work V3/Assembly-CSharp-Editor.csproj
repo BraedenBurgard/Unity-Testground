@@ -36,6 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Standard\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
+     <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />
+     <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\SpecularLightingEditor.cs" />
+     <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\WaterBaseEditor.cs" />
+     <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\WaterEditorUtility.cs" />
      <Compile Include="Assets\Tutorial_Info\Scripts\Editor\ReadmeEditor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -219,6 +225,12 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-Editor-firstpass">
+        <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.VR">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.5f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
@@ -627,19 +639,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{27770d14-0341-213c-7cad-77d5db752881}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{ffbbf435-a479-7567-00e3-46bd673d7698}</Project>
       <Name>Assembly-CSharp</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{44186506-5026-bf05-ce2b-f0e7770a14c3}</Project>
-      <Name>Assembly-CSharp-Editor-firstpass</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
