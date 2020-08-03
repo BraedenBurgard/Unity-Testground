@@ -34,7 +34,7 @@ public class LevelLayout : MonoBehaviour
             }
         }
 
-        while(!success && tries < 100)
+        while(!success && tries < 10000)
         {
             if(levelType.ToLower() == "linear") {success = GenerateLinear(true, 25, 20, "-y", totalRooms, 0, false, false);}
             tries++;
@@ -42,8 +42,8 @@ public class LevelLayout : MonoBehaviour
 
 
         //print level layout to debug
-        if(success) {PrintMapToDebug();}
-        else {Debug.Log("Failed 100 times");}
+        if(success) {PrintMapToDebug(); GetComponent<LevelController>().GenerateLevel(levelMap);}
+        else {Debug.Log("Failed 10000 times");}
     }
 
     //goes straight, no branching
@@ -216,6 +216,12 @@ public class LevelLayout : MonoBehaviour
                         break;
                     case "start":
                         printThis += "S";
+                        break;
+                    case "boss":
+                        printThis += "B";
+                        break;
+                    case "exit":
+                        printThis += "E";
                         break;
                     default:
                         printThis += "?";

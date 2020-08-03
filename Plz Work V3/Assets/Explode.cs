@@ -30,11 +30,14 @@ public class Explode : MonoBehaviour
     }
 
     
-    void OnTriggerStay()
+    void OnTriggerStay(Collider collider)
     {
-        GameObject explosion = (GameObject)Instantiate(createThis, 
-                                            Spawnpoint.position, 
-                                            createThis.transform.localRotation);
-        Destroy(gameObject);
+        if(!(collider.gameObject.tag == "Room"))
+        {
+            GameObject explosion = (GameObject)Instantiate(createThis, 
+                                                Spawnpoint.position, 
+                                             createThis.transform.localRotation);
+            Destroy(gameObject);
+        }
     }
 }

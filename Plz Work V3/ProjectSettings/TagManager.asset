@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Movable
   - Destructable
+  - Room
   layers:
   - Default
   - TransparentFX
