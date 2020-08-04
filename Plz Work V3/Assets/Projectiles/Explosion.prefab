@@ -60,5 +60,5 @@ MonoBehaviour:
   createThis: {fileID: 1570927096764274, guid: 643639841fb531e4ba8097fed4eb9ac7, type: 3}
   Spawnpoint: {fileID: 5087539536232495674}
   explosionRadius: 5
-  boopStrength: 15
+  boopStrength: 40
   environmentalDamage: 1

@@ -11,5 +11,15 @@ public class RoomAttributes : MonoBehaviour
     [Tooltip("What type of room is this? Use all lowercase")]
     public string type;
 
+    public string levelName;
+
     public int x, y;
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            GameObject.Find(levelName).GetComponent<LevelController>().SetNeighboursActive(x,y);
+        }
+    }
 }
