@@ -11,6 +11,5 @@ public class RoomAttributes : MonoBehaviour
     [Tooltip("What type of room is this? Use all lowercase")]
     public string type;
 
-    [System.NonSerialized]
     public int x, y;
 }

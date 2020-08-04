@@ -102,9 +102,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7314155764370549683}
   - component: {fileID: 916627044917704124}
+  - component: {fileID: -41590472934226758}
   m_Layer: 0
   m_Name: Nnormal_blank
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5324537922776229357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.471851, y: 18.122755, z: -31.076696}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 630627533402488873}
@@ -144,6 +145,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.193447, y: 10.127194, z: 10.58839}
   m_Center: {x: -5.0967236, y: 0.0900321, z: 3.32193}
+--- !u!114 &-41590472934226758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324537922776229357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c9265ab5eff0049bf8a2ecf8d080b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitOrientation: N
+  type: normal
+  x: 0
+  y: 0
 --- !u!1 &8144271026059413452
 GameObject:
   m_ObjectHideFlags: 0

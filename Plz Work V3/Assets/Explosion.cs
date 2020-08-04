@@ -12,7 +12,7 @@ public class Explosion : MonoBehaviour
     private int lifeSpan = 7;
     
     //a list of the colliders hit. Stored as pointers for efficiency
-    private GameObject[] collidersHit = new GameObject[10];
+    private GameObject[] collidersHit = new GameObject[50];
     private int numCollisions = 0;
     private GameObject explosionEffect;
 

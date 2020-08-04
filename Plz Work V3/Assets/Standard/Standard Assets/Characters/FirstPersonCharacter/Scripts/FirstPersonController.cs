@@ -348,5 +348,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.y = 0;
             m_MoveDir = newMoveDir + m_MoveDir*bounceSpeedPreservation;
         }
+
+        public void MoveTo(Vector3 location)
+        {
+            m_CharacterController.enabled = false;
+            transform.position = location;
+            m_CharacterController.enabled = true;
+        }
     }
 }

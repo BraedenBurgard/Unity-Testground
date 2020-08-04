@@ -132,9 +132,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8592643668278294373}
   - component: {fileID: 2163603009324968298}
+  - component: {fileID: -2203000407470133971}
   m_Layer: 0
   m_Name: NEnormal_blank
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,6 +176,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.193447, y: 10.127194, z: 10.58839}
   m_Center: {x: -5.0967236, y: 0.0900321, z: 3.32193}
+--- !u!114 &-2203000407470133971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6582755285545154875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c9265ab5eff0049bf8a2ecf8d080b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitOrientation: NE
+  type: normal
+  x: 0
+  y: 0
 --- !u!1 &7185609000083594010
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,39 +17,44 @@ public class LevelLayout : MonoBehaviour
 
     public bool hasBossRoom;
 
+    public int generationAttempts;
 
-    private string[,] levelMap = new string[50,50];
+    [Tooltip("Just tempType a name, path and .txt added automatically")]
+    public string outFile;
+
+
+    private string[,] levelMap = new string[200,200];
     private int[] startCoord = new int[2];
+
 
     void Start()
     {
         bool success = false;
         int tries = 0;
-
-        for(int i = 0; i < 50; i++)
+        while(!success && tries < generationAttempts)
         {
-            for(int j = 0; j < 50; j++)
-            {
-                levelMap[i,j] = "empty";
+            //reset to empty on each failed attempt
+            for(int i = 0; i < 200; i++)
+             {
+                for(int j = 0; j < 200; j++)
+                {
+                    levelMap[i,j] = "empty";
+                }
             }
-        }
-
-        while(!success && tries < 10000)
-        {
-            if(levelType.ToLower() == "linear") {success = GenerateLinear(true, 25, 20, "-y", totalRooms, 0, false, false);}
+            if(levelType.ToLower() == "linear") {success = GenerateLinear(true, 100, 100, "+x", totalRooms, numTreasureRooms, false, false);}
             tries++;
         }
 
-
+        //send the completed map to LevelController
         //print level layout to debug
-        if(success) {PrintMapToDebug(); GetComponent<LevelController>().GenerateLevel(levelMap);}
-        else {Debug.Log("Failed 10000 times");}
+        if(success) {MapToFile(); GetComponent<LevelController>().GenerateLevel(levelMap, totalRooms);}
+        else {Debug.Log("Failed " + generationAttempts + " times");}
     }
 
     //goes straight, no branching
     bool GenerateLinear(bool isStart, int startX, int startY, string startDirection, int rooms, int treasureRooms, bool bossRoom, bool exitRoom)
     {
-
+        int roomsCopy = rooms;
         int[] currentCoord = new int[2]{startX, startY};
         string currentDirection = startDirection;
         bool nextValid;
@@ -97,7 +102,17 @@ public class LevelLayout : MonoBehaviour
             if(currentDirection == "trapped") {return false;}
         }
 
-
+        //add treasure rooms if necessary, jutting out from main path
+        if(treasureRooms > 0)
+        {
+            string tempDirection;
+            if(IsRoom(startX+1,startY)) {tempDirection = "+x";}
+            else if(IsRoom(startX-1,startY)) {tempDirection = "-x";}
+            else if(IsRoom(startX,startY+1)) {tempDirection = "+y";}
+            else {tempDirection = "-y";}
+            Debug.Log("check0");
+            if(!TraverseAndAddExtras(startX, startY, tempDirection, "treasure", treasureRooms, roomsCopy-1)) {return false;}
+        }
 
 
         //return true if successfully finished
@@ -148,7 +163,7 @@ public class LevelLayout : MonoBehaviour
 
     bool DirectionValidForNext(int x, int y, string direction)
     {
-        if(x > 50 || y > 50) {return false;}
+        if(x > 200 || y > 200) {return false;}
         switch(direction)
             {
                 case "+x":
@@ -185,12 +200,10 @@ public class LevelLayout : MonoBehaviour
         }
     }
 
-    static void WriteString(string writeThis)
+    void WriteString(string writeThis)
     {
-        string path = "Assets/LevelGeneration/LevelMap0.txt";
-
         //Write some text to the test.txt file
-        StreamWriter writer = new StreamWriter(path, true);
+        StreamWriter writer = new StreamWriter("Assets/LevelGeneration/" + outFile + ".txt", true);
         writer.WriteLine(writeThis);
         writer.Close();
 
@@ -198,13 +211,13 @@ public class LevelLayout : MonoBehaviour
 
 
     //print map to debug log
-    void PrintMapToDebug()
+    void MapToFile()
     {
         string printThis = "";
 
-        for(int i = 0; i < 50; i++)
+        for(int i = 0; i < 200; i++)
         {
-            for(int j = 0; j < 50; j++)
+            for(int j = 0; j < 200; j++)
             {
                 switch(levelMap[i,j])
                 {
@@ -223,6 +236,9 @@ public class LevelLayout : MonoBehaviour
                     case "exit":
                         printThis += "E";
                         break;
+                    case "treasure":
+                        printThis += "T";
+                        break;
                     default:
                         printThis += "?";
                         break;
@@ -232,5 +248,123 @@ public class LevelLayout : MonoBehaviour
         }
         WriteString(printThis);
     }
+
+    bool IsRoom(int x, int y)
+    {
+        if(x > 200 || x < 0 || y > 200 || y < 0) {return false;}
+        if(levelMap[x,y] == "empty") {return false;}
+        return true;
+    }
+
+    //returns false when out of bound exceptions occur
+    bool IsNotRoom(int x, int y)
+    {
+        if(x > 200 || x < 0 || y > 200 || y < 0) {return false;}
+        if(levelMap[x,y] == "empty") {return true;}
+        return false;
+    }
+
+    //regular method for traversing the level
+    void Traverse(int oldx, int oldy, int newx, int newy, int failsafe)
+    {
+        failsafe--;
+        if(failsafe == 0) {Debug.Log("Traverse failsafe reached"); return;}
+
+        string direction = "";
+        if(newx > oldx) {direction = "+x";}
+        if(newx < oldx) {direction = "-x";}
+        if(newy > oldy) {direction = "+y";}
+        if(newy < oldy) {direction = "-y";}
+
+        //recursive call on other connected rooms
+        //exit condition is when no if statements pass
+        if(IsRoom(newx+1, newy) && newx+1 != oldx)
+        {Traverse(newx,newy, newx+1,newy, failsafe);}
+        if(IsRoom(newx-1, newy) && newx-1 != oldx)
+        {Traverse(newx,newy, newx-1,newy, failsafe);}
+        if(IsRoom(newx, newy+1) && newy+1 != oldy)
+        {Traverse(newx,newy, newx,newy+1, failsafe);}
+        if(IsRoom(newx, newy-1) && newy-1 != oldy)
+        {Traverse(newx,newy, newx,newy-1, failsafe);}
+    }
     
+    //adds specified number of treasures at random places along given branch (AFTER given x,y). Only at normal rooms
+    private int tempRemainingExtraRooms;
+    private string tempType;
+    private float tempChance;
+    bool TraverseAndAddExtras(int x, int y, string direction, string type, int amount, int roomsInBranch)
+    {
+        tempRemainingExtraRooms = amount;
+        tempType = type;
+        tempChance = 4f / roomsInBranch;
+        int newx = 0;
+        int newy = 0;
+        switch(direction)
+        {
+            case "+x": newx = x+1; newy = y; break;
+            case "-x": newx = x-1; newy = y; break;
+            case "+y": newx = x; newy = y+1; break;
+            case "-y": newx = x; newy = y-1; break;
+        }
+        int failsafe = amount*10;
+
+        while(tempRemainingExtraRooms > 0 && failsafe >= 0)
+        {TraverseAndAddExtrasRecursive(x, y, newx, newy, totalRooms); 
+        failsafe--;}
+
+        //true if successful, false if failed to put the right number of treasureRooms
+        if(tempRemainingExtraRooms < 0) {Debug.Log("TraverseAndAddTreasures put in too many treasure rooms");}
+        if(tempRemainingExtraRooms != 0) {return false;}
+        return true;
+    }
+    void TraverseAndAddExtrasRecursive(int oldx, int oldy, int newx, int newy, int failsafe)
+    {
+        Debug.Log(newx + " " + newy + levelMap[newx,newy]);
+
+        failsafe--;
+        if(failsafe == 0) {Debug.Log("Traverse failsafe reached"); return;}
+
+        string direction = "";
+        if(newx > oldx) {direction = "+x";}
+        if(newx < oldx) {direction = "-x";}
+        if(newy > oldy) {direction = "+y";}
+        if(newy < oldy) {direction = "-y";}
+
+        if(tempRemainingExtraRooms <= 0) {return;}
+        if(levelMap[newx,newy] == "normal" && Random.Range(0f,1f) < tempChance)
+        {
+            int rand = Random.Range(1,4);
+            
+            switch(rand)
+            {
+                case 1: 
+                    if(direction != "+x" && ValidForNext(newx+1, newy)) 
+                    {levelMap[newx+1,newy] = tempType; tempRemainingExtraRooms--;}
+                    break;
+                case 2: 
+                    if(direction != "-x" && ValidForNext(newx-1, newy)) 
+                    {levelMap[newx-1,newy] = tempType; tempRemainingExtraRooms--;}
+                    break;
+                case 3: 
+                    if(direction != "+y" && ValidForNext(newx, newy+1)) 
+                    {levelMap[newx,newy+1] = tempType; tempRemainingExtraRooms--;}
+                    break;
+                case 4: 
+                    if(direction != "-y" && ValidForNext(newx, newy-1)) 
+                    {levelMap[newx,newy-1] = tempType; tempRemainingExtraRooms--;}
+                    break;
+            }
+        }
+
+        //recursive call on other connected rooms
+        //exit condition is when no if statements pass
+        if(IsRoom(newx+1, newy) && newx+1 != oldx)
+        {TraverseAndAddExtrasRecursive(newx,newy, newx+1,newy, failsafe);}
+        if(IsRoom(newx-1, newy) && newx-1 != oldx)
+        {TraverseAndAddExtrasRecursive(newx,newy, newx-1,newy, failsafe);}
+        if(IsRoom(newx, newy+1) && newy+1 != oldy)
+        {TraverseAndAddExtrasRecursive(newx,newy, newx,newy+1, failsafe);}
+        if(IsRoom(newx, newy-1) && newy-1 != oldy)
+        {TraverseAndAddExtrasRecursive(newx,newy, newx,newy-1, failsafe);}
+    }
 }
