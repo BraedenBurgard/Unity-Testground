@@ -110,7 +110,6 @@ public class LevelLayout : MonoBehaviour
             else if(IsRoom(startX-1,startY)) {tempDirection = "-x";}
             else if(IsRoom(startX,startY+1)) {tempDirection = "+y";}
             else {tempDirection = "-y";}
-            Debug.Log("check0");
             if(!TraverseAndAddExtras(startX, startY, tempDirection, "treasure", treasureRooms, roomsCopy-1)) {return false;}
         }
 
@@ -319,7 +318,6 @@ public class LevelLayout : MonoBehaviour
     }
     void TraverseAndAddExtrasRecursive(int oldx, int oldy, int newx, int newy, int failsafe)
     {
-        Debug.Log(newx + " " + newy + levelMap[newx,newy]);
 
         failsafe--;
         if(failsafe == 0) {Debug.Log("Traverse failsafe reached"); return;}
