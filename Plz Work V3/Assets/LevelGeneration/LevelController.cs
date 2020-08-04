@@ -5,7 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class LevelController : MonoBehaviour
 {
-        public GameObject N_start1;
+    public GameObject N_start1;
         private GameObject[] N_start_options = new GameObject[1];
     public GameObject N_normal1, N_normal2, N_normal3, N_normal4, N_normal5, N_normal6, N_normal7;
         private GameObject[] N_normal_options = new GameObject[7];
@@ -179,6 +179,7 @@ public class LevelController : MonoBehaviour
                 {
                     allRooms[i,j].GetComponent<RoomAttributes>().x = i;
                     allRooms[i,j].GetComponent<RoomAttributes>().y = j;
+                    allRooms[i,j].GetComponent<RoomAttributes>().levelName = gameObject.name;
                 }
                 else{isNull = false;}
             }
@@ -381,9 +382,6 @@ public class LevelController : MonoBehaviour
         Vector3 newLocation = oldReference.transform.position - newReference.transform.position;
         allRooms[newx,newy].transform.position += newLocation;
 
-        //TEMPORARY FOR TESTING
-        allRooms[newx, newy].SetActive(true);
-
 
         //this exit condition avoids endless loops, but should never be reached
         failsafe--;
@@ -400,5 +398,26 @@ public class LevelController : MonoBehaviour
         if(IsRoom(newx, newy-1) && newy-1 != oldy)
         {Traverse_and_SetPosition(newx,newy, newx,newy-1, failsafe);}
         
+    }
+
+    public void SetNeighboursActive(int x, int y)
+    {
+        setActive(x+1,y,true);
+        setActive(x-1,y,true);
+        setActive(x,y+1,true);
+        setActive(x,y-1,true);
+
+        setActive(x+2,y,false);
+        setActive(x+1,y+1,false);
+        setActive(x,y+2,false);
+        setActive(x-1,y+1,false);
+        setActive(x-2,y,false);
+        setActive(x-1,y-1,false);
+        setActive(x,y-2,false);
+        setActive(x+1,y-1,false);
+    }
+    void setActive(int x, int y, bool aBool)
+    {
+        if(allRooms[x,y] != null) {allRooms[x,y].SetActive(aBool);}
     }
 }

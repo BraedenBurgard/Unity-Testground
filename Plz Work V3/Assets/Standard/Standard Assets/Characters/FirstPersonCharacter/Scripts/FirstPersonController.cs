@@ -50,10 +50,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private float bounceSpeedSquared;
 
         // Use this for initialization
         private void Start()
         {
+            bounceSpeedSquared = max_Normal_Airspeed*max_Normal_Airspeed;
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -103,9 +105,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-
-            //Debug.Log(lastMove.x + " " + lastMove.y + " " + lastMove.z);
-
+            
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -141,18 +141,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.z = desiredMove.z*speed;
             }
 
+            if(!bounce) 
+            {
+                bounceSpeedSquared = lastMove.magnitude;
+                if(bounceSpeedSquared < max_Normal_Airspeed*max_Normal_Airspeed) {bounceSpeedSquared = max_Normal_Airspeed*max_Normal_Airspeed;}    
+            }
+
             if(!m_CharacterController.isGrounded || bounce)
             {
                 m_MoveDir.x = lastMove.x + (m_MoveDir.x * Time.fixedDeltaTime * air_Control);
                 m_MoveDir.z = lastMove.z + (m_MoveDir.z * Time.fixedDeltaTime * air_Control);
 
+                Vector2 temp = new Vector2(m_MoveDir.x, m_MoveDir.z);
                 //limit max speed
-                /*
-                if(Mathf.Abs(m_MoveDir.x) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.x) > Mathf.Abs(lastMove.x)) 
-                    {m_MoveDir.x = lastMove.x;}
-                if(Mathf.Abs(m_MoveDir.z) > max_Normal_Airspeed && Mathf.Abs(m_MoveDir.z) > Mathf.Abs(lastMove.z)) 
-                    {m_MoveDir.z = lastMove.z;}
-                */
+                if (!bounce && temp.sqrMagnitude > bounceSpeedSquared)
+                {
+                    temp.Normalize();
+                    temp *= max_Normal_Airspeed;
+                    m_MoveDir.x = temp.x;
+                    m_MoveDir.z = temp.y;
+                }
             }
 
 
@@ -344,6 +352,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void Bounce(Vector3 newMoveDir)
         {
+            bounceSpeedSquared = newMoveDir.magnitude * newMoveDir.magnitude;
             bounce = true;
             m_MoveDir.y = 0;
             m_MoveDir = newMoveDir + m_MoveDir*bounceSpeedPreservation;
