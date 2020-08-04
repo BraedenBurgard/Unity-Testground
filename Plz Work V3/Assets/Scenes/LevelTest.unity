@@ -229,8 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelType: Linear
   turnChance: 0.1
-  totalRooms: 7
-  numTreasureRooms: 1
+  totalRooms: 40
+  numTreasureRooms: 5
   hasBossRoom: 0
   generationAttempts: 1000
   outFile: TreasureTest1
