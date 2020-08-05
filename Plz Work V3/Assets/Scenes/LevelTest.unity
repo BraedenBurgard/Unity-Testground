@@ -215,6 +215,20 @@ MonoBehaviour:
   N_treasure5: {fileID: 0}
   N_treasure6: {fileID: 0}
   N_treasure7: {fileID: 0}
+  N_boss1: {fileID: 2337167198109140366, guid: 93601d1b4ed2bce4ba923af8d3ebadfa, type: 3}
+  N_boss2: {fileID: 0}
+  N_boss3: {fileID: 0}
+  N_boss4: {fileID: 0}
+  N_boss5: {fileID: 0}
+  N_boss6: {fileID: 0}
+  N_boss7: {fileID: 0}
+  N_exit1: {fileID: 2337167198109140366, guid: 52af1438d9d2e024db5caf674148a222, type: 3}
+  N_exit2: {fileID: 0}
+  N_exit3: {fileID: 0}
+  N_exit4: {fileID: 0}
+  N_exit5: {fileID: 0}
+  N_exit6: {fileID: 0}
+  N_exit7: {fileID: 0}
 --- !u!114 &1062953946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,8 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelType: Linear
   turnChance: 0.1
-  totalRooms: 40
-  numTreasureRooms: 5
+  totalRooms: 8
+  numTreasureRooms: 1
   hasBossRoom: 0
   generationAttempts: 1000
   outFile: TreasureTest1
@@ -335,6 +349,16 @@ PrefabInstance:
         type: 3}
       propertyPath: max_Normal_Airspeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690229113560713727, guid: c65767559ee1ba44fa118a119cc38c20,
+        type: 3}
+      propertyPath: bombPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690229113560713727, guid: c65767559ee1ba44fa118a119cc38c20,
+        type: 3}
+      propertyPath: rightClickCooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c65767559ee1ba44fa118a119cc38c20, type: 3}

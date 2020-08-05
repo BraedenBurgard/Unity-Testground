@@ -8,6 +8,7 @@ public class Explode : MonoBehaviour
     [SerializeField] private GameObject createThis;
     [SerializeField] private Transform Spawnpoint;
     [SerializeField] private float lifeSpan;
+    public float bombPower;
 
 
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class Explode : MonoBehaviour
             GameObject explosion = (GameObject)Instantiate(createThis, 
                                                 Spawnpoint.position, 
                                              createThis.transform.localRotation);
+            explosion.GetComponent<Explosion>().boopStrength = bombPower;
             Destroy(gameObject);
         }
     }

@@ -17,6 +17,7 @@ public class RoomAttributes : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+
         if (collider.gameObject.tag == "Player")
         {
             GameObject.Find(levelName).GetComponent<LevelController>().SetNeighboursActive(x,y);

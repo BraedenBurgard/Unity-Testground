@@ -41,7 +41,7 @@ public class LevelLayout : MonoBehaviour
                     levelMap[i,j] = "empty";
                 }
             }
-            if(levelType.ToLower() == "linear") {success = GenerateLinear(true, 100, 100, "+x", totalRooms, numTreasureRooms, false, false);}
+            if(levelType.ToLower() == "linear") {success = GenerateLinear(true, 100, 100, "+x", totalRooms, numTreasureRooms, hasBossRoom, !hasBossRoom);}
             tries++;
         }
 
@@ -59,6 +59,11 @@ public class LevelLayout : MonoBehaviour
         string currentDirection = startDirection;
         bool nextValid;
 
+        //subtract special rooms from total rooms
+        rooms -= treasureRooms;
+        if(bossRoom) {rooms--;}
+        if(exitRoom) {rooms--;}
+
         //set beginning of this path to spawn if isStart is true
         if(isStart)
         {
@@ -69,7 +74,7 @@ public class LevelLayout : MonoBehaviour
         else {levelMap[currentCoord[0],currentCoord[1]] = "normal";}
         rooms--;
 
-        while(rooms > 0)
+        while(rooms > 0 || bossRoom || exitRoom)
         {
             switch(currentDirection)
             {
@@ -95,8 +100,21 @@ public class LevelLayout : MonoBehaviour
                 return false;
             }
 
-            levelMap[currentCoord[0],currentCoord[1]] = "normal";
-            rooms--;
+            if(rooms > 0)
+            {
+                levelMap[currentCoord[0],currentCoord[1]] = "normal";
+                rooms--;
+            }
+            else if(bossRoom)
+            {
+                levelMap[currentCoord[0],currentCoord[1]] = "boss";
+                bossRoom = false;
+            }
+            else if(exitRoom)
+            {
+                levelMap[currentCoord[0],currentCoord[1]] = "exit";
+                exitRoom = false;
+            }
 
             currentDirection = DetermineDirection(currentCoord[0],currentCoord[1], currentDirection);
             if(currentDirection == "trapped") {return false;}

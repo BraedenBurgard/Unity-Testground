@@ -19,6 +19,10 @@ public class LevelController : MonoBehaviour
         private GameObject[] NESW_normal_options = new GameObject[7];
     public GameObject N_treasure1, N_treasure2, N_treasure3, N_treasure4, N_treasure5, N_treasure6, N_treasure7;
         private GameObject[] N_treasure_options = new GameObject[7];
+    public GameObject N_boss1, N_boss2, N_boss3, N_boss4, N_boss5, N_boss6, N_boss7;
+        private GameObject[] N_boss_options = new GameObject[7];
+    public GameObject N_exit1, N_exit2, N_exit3, N_exit4, N_exit5, N_exit6, N_exit7;
+        private GameObject[] N_exit_options = new GameObject[7];
 
     [System.NonSerialized]
     public string[,] levelMap = new string[200,200];
@@ -79,6 +83,22 @@ public class LevelController : MonoBehaviour
         if(N_treasure5 != null) {N_treasure_options[4] = N_treasure5;}
         if(N_treasure6 != null) {N_treasure_options[5] = N_treasure6;}
         if(N_treasure7 != null) {N_treasure_options[6] = N_treasure7;}
+
+        if(N_boss1 != null) {N_boss_options[0] = N_boss1;}
+        if(N_boss2 != null) {N_boss_options[1] = N_boss2;}
+        if(N_boss3 != null) {N_boss_options[2] = N_boss3;}
+        if(N_boss4 != null) {N_boss_options[3] = N_boss4;}
+        if(N_boss5 != null) {N_boss_options[4] = N_boss5;}
+        if(N_boss6 != null) {N_boss_options[5] = N_boss6;}
+        if(N_boss7 != null) {N_boss_options[6] = N_boss7;}
+
+        if(N_exit1 != null) {N_exit_options[0] = N_exit1;}
+        if(N_exit2 != null) {N_exit_options[1] = N_exit2;}
+        if(N_exit3 != null) {N_exit_options[2] = N_exit3;}
+        if(N_exit4 != null) {N_exit_options[3] = N_exit4;}
+        if(N_exit5 != null) {N_exit_options[4] = N_exit5;}
+        if(N_exit6 != null) {N_exit_options[5] = N_exit6;}
+        if(N_exit7 != null) {N_exit_options[6] = N_exit7;}
     }
 
     //generates the level. Called from LevelLayout script in same GameObject
@@ -173,7 +193,30 @@ public class LevelController : MonoBehaviour
                                 break;
                         }
                         break;
-                    
+                    case "boss":
+                        switch(CountNeighbors(i,j))
+                        {
+                            case 1:
+                                allRooms[i,j] = (GameObject)Instantiate(
+                                            Choose(N_boss_options), 
+                                            new Vector3(0f, 0f, 0f),
+                                            Quaternion.Euler(new Vector3(0f, DetermineRotation(i,j), 0f)));
+                                allRooms[i,j].SetActive(false);
+                                break;
+                        }
+                        break;
+                    case "exit":
+                        switch(CountNeighbors(i,j))
+                        {
+                            case 1:
+                                allRooms[i,j] = (GameObject)Instantiate(
+                                            Choose(N_exit_options), 
+                                            new Vector3(0f, 0f, 0f),
+                                            Quaternion.Euler(new Vector3(0f, DetermineRotation(i,j), 0f)));
+                                allRooms[i,j].SetActive(false);
+                                break;
+                        }
+                        break;
                 }
                 if(!isNull)
                 {

@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     public float leftClickCooldown;
     public float rightClickCooldown;
     public Transform Spawnpoint;
+    public float bombPower;
 
     private float OGleftCooldown;
     private float OGrightCooldown;
@@ -88,12 +89,17 @@ public class Projectile : MonoBehaviour
                                             Spawnpoint.position + characterForwardVector*.7f, 
                                             projectile.rotation);
             Physics.IgnoreCollision(clone.GetComponent<Collider>(), GetComponent<CharacterController>());
-
+            AdjustBomb(clone);
 
             //clone.velocity = Spawnpoint.TransformDirection (Vector3.forward*20) + cameraForwardVector*20;
             clone.velocity = characterForwardVector*20;
             
             rightClickCooldown = OGrightCooldown;
         }
+    }
+
+    void AdjustBomb(Rigidbody projectile)
+    {
+        projectile.gameObject.GetComponent<Explode>().bombPower = this.bombPower;
     }
 }
