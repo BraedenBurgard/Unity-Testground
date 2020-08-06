@@ -26,11 +26,14 @@ public class Projectile : MonoBehaviour
         OGrightCooldown = rightClickCooldown;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         rightClickCooldown -= Time.fixedDeltaTime;
         leftClickCooldown -= Time.fixedDeltaTime;
+    }
+
+    void Update()
+    {
         if(Input.GetButtonDown("Fire1") && rightClickCooldown <= 0){
             projectile = leftClick;
             Rigidbody clone;
