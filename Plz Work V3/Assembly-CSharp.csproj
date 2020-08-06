@@ -40,6 +40,7 @@
      <Compile Include="Assets\Castlear\Builder\Scripts\CastlearModulue.cs" />
      <Compile Include="Assets\Character\PlayerState.cs" />
      <Compile Include="Assets\CharacterControls.cs" />
+     <Compile Include="Assets\Enemies\EnemyState.cs" />
      <Compile Include="Assets\Explode.cs" />
      <Compile Include="Assets\Explosion.cs" />
      <Compile Include="Assets\Interactable Objects\DestructableObject.cs" />
