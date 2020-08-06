@@ -27,7 +27,7 @@ public class Explosion : MonoBehaviour
         child.localScale = new Vector3(explosionRadius, explosionRadius, explosionRadius);
         }
     }
-    void Update()
+    void FixedUpdate()
     {
         if(lifeSpan == 0) {Destroy(explosionEffect); Destroy(gameObject);}
         lifeSpan--;

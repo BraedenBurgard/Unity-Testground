@@ -40,7 +40,8 @@
      <Compile Include="Assets\Castlear\Builder\Scripts\CastlearModulue.cs" />
      <Compile Include="Assets\Character\PlayerState.cs" />
      <Compile Include="Assets\CharacterControls.cs" />
-     <Compile Include="Assets\Enemies\EnemyState.cs" />
+     <Compile Include="Assets\Enemies\Helpful stuff\ChildVisionEnter.cs" />
+     <Compile Include="Assets\Enemies\Helpful stuff\EnemyState.cs" />
      <Compile Include="Assets\Explode.cs" />
      <Compile Include="Assets\Explosion.cs" />
      <Compile Include="Assets\Interactable Objects\DestructableObject.cs" />
@@ -49,6 +50,7 @@
      <Compile Include="Assets\LevelGeneration\LevelLayout.cs" />
      <Compile Include="Assets\LevelGeneration\Rooms\RoomAttributes.cs" />
      <Compile Include="Assets\Projectile.cs" />
+     <Compile Include="Assets\RedSlimeState.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />

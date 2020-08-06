@@ -245,7 +245,7 @@ MonoBehaviour:
   turnChance: 0.1
   totalRooms: 8
   numTreasureRooms: 1
-  hasBossRoom: 0
+  hasBossRoom: 1
   generationAttempts: 1000
   outFile: TreasureTest1
 --- !u!1001 &1250988561

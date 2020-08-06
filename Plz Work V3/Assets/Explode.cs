@@ -33,7 +33,7 @@ public class Explode : MonoBehaviour
     
     void OnTriggerStay(Collider collider)
     {
-        if(!(collider.gameObject.tag == "Room"))
+        if(!(collider.gameObject.tag == "Room") && !(collider.gameObject.tag == "Trigger"))
         {
             GameObject explosion = (GameObject)Instantiate(createThis, 
                                                 Spawnpoint.position, 
