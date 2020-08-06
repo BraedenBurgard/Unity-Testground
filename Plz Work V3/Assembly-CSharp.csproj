@@ -69,6 +69,7 @@
      <Compile Include="Assets\LevelGeneration\LevelController.cs" />
      <Compile Include="Assets\LevelGeneration\LevelLayout.cs" />
      <Compile Include="Assets\LevelGeneration\Rooms\RoomAttributes.cs" />
+     <Compile Include="Assets\LowPolyGround\Scripts\FreeCamera.cs" />
      <Compile Include="Assets\Projectile.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
@@ -181,6 +182,7 @@
      <Compile Include="Assets\Standard\Standard Assets\Vehicles\Car\Scripts\WheelEffects.cs" />
      <Compile Include="Assets\TestTrigger.cs" />
      <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
+     <Compile Include="Assets\Tutorial_Info\Scripts\buttonAssetstore.cs" />
      <None Include="Assets\Stylized house\Ciconia Studio\Shaders\Double Sided Shaders\Double Sided Transparent Diffuse Bump.shader" />
      <None Include="Assets\Samples\Terrain Tools\0.1.0-preview\Terrain Assets\ThirdPartyNotices.txt" />
      <None Include="Assets\Standard\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
@@ -202,6 +204,7 @@
      <None Include="Assets\Standard\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />
      <None Include="Assets\Standard\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\Standard\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\LowPolyGround\Readme_DownLoad Post ProcessingStack.txt" />
      <None Include="Assets\Standard\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Standard\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
      <None Include="Assets\Standard\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
