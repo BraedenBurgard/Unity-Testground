@@ -36,7 +36,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Castlear\Builder\Scripts\Editor\CastlearWindow.cs" />
      <Compile Include="Assets\Standard\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
      <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
      <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />

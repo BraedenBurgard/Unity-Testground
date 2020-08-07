@@ -6,7 +6,7 @@ public class RedSlimeState : EnemyState
 {
     [Tooltip("How far should the enemy stand from the player while in combat?")]
     public float combatRange;
-    public float movementSpeed;
+    public float movementSpeed; 
 
     //this represents the different states of the slime
     // 1 = idle
