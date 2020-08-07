@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 346.4
+=======
+    x: 7.2000003
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 50.4
     width: 1182.4
     height: 766.4
@@ -43,12 +47,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1183
+=======
+    width: 1522
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     height: 717
   m_MinSize: {x: 680, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 35
+=======
+  controlID: 15
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,7 +76,11 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 855
+=======
+    x: 1213
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 0
     width: 328
     height: 717
@@ -92,7 +108,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 239
+=======
+    width: 300
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     height: 434
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
@@ -111,7 +131,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name: ProjectBrowser
+=======
+  m_Name: ConsoleWindow
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -120,6 +144,7 @@ MonoBehaviour:
     y: 434
     width: 855
     height: 283
+<<<<<<< HEAD
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 13}
@@ -128,6 +153,16 @@ MonoBehaviour:
   - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 1
+=======
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 13}
+  - {fileID: 18}
+  m_Selected: 1
+  m_LastSelected: 0
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +183,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1183
+=======
+    width: 1522
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     height: 767
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -169,7 +208,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1183
+=======
+    width: 1522
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -191,7 +234,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 747
+<<<<<<< HEAD
     width: 1183
+=======
+    width: 1522
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -214,12 +261,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 855
     height: 717
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
   controlID: 40
+=======
+    width: 1213
+    height: 717
+  m_MinSize: {x: 403, y: 342}
+  m_MaxSize: {x: 8003, y: 8042}
+  vertical: 1
+  controlID: 16
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -239,12 +295,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 855
+=======
+    width: 1213
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     height: 434
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 41
+=======
+  controlID: 17
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -260,7 +324,11 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 239
+=======
+    x: 300
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 0
     width: 616
     height: 434
@@ -320,7 +388,11 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 346.4
+=======
+    x: 7.2000003
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 514.4
     width: 854
     height: 262
@@ -338,20 +410,35 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Enemies/Slime
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Enemies/Slime
+=======
+    - Assets/BrokenVector
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/BrokenVector
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\braed\Project-with-jacobi\Plz Work V3
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 103}
     m_SelectedIDs: 086f0000
     m_LastClickedID: 28424
     m_ExpandedIDs: 00000000b26e0000b46e0000b66e0000b86e0000ba6e0000bc6e0000be6e0000c06e0000c26e0000c46e0000c66e0000c86e0000cc6e0000ce6e0000006f000000ca9a3b
+=======
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 76420000
+    m_LastClickedID: 17014
+    m_ExpandedIDs: 000000004442000046420000484200004a4200004c4200004e42000050420000524200005442000056420000584200005a4200005c4200005e420000624200007e42000000ca9a3b
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +466,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000b26e0000b46e0000b66e0000b86e0000ba6e0000bc6e0000be6e0000c06e0000c26e0000c46e0000c66e0000c86e0000ca6e0000cc6e0000ce6e0000
+=======
+    m_ExpandedIDs: 000000004442000046420000484200004a4200004c4200004e42000050420000524200005442000056420000584200005a4200005c4200005e4200006042000062420000
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -456,7 +547,11 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1201.6
+=======
+    x: 1220
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 80.8
     width: 326
     height: 696
@@ -494,7 +589,11 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 346.4
+=======
+    x: 7.2000003
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 80.8
     width: 238
     height: 413
@@ -502,9 +601,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 10ba0000
       m_LastClickedID: 47632
       m_ExpandedIDs: fe18ffffe6b90000e8b90000f2b90000f4b90000f8b9000002ba0000
+=======
+      m_SelectedIDs: 16730000
+      m_LastClickedID: 29462
+      m_ExpandedIDs: e2f5ffff0673000008730000147300001673000018730000
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: Red Slime
@@ -527,7 +632,11 @@ MonoBehaviour:
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
+<<<<<<< HEAD
   m_WindowGUID: dbcbbdbf5f5863e40993b6c3a8557d73
+=======
+  m_WindowGUID: cf3da1089b9399a4690d2c3c8b14bd68
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -549,13 +658,21 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 585.60004
+=======
+    x: 307.2
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 80.8
     width: 614
     height: 413
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
+<<<<<<< HEAD
   m_WindowGUID: 45f5ff098c160234f9902c389e7d779d
+=======
+  m_WindowGUID: 772e560d29c765f458dfd31b2c43520e
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
   m_Gizmos: 1
   m_SceneIsLit: 0
   m_SceneLighting: 1
@@ -564,9 +681,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: -3.2000105, y: -0.31440067, z: 5.277999}
     speed: 2
     m_Value: {x: -3.2000105, y: -0.31440067, z: 5.277999}
+=======
+    m_Target: {x: -2.8954697, y: -0.22786903, z: -2.1089182}
+    speed: 2
+    m_Value: {x: -2.8954697, y: -0.22786903, z: -2.1089182}
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -612,9 +735,15 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0.11817092, y: -0.49778822, z: 0.068683654, w: 0.8564692}
     speed: 2
     m_Value: {x: 0.11796349, y: -0.5003518, z: 0.06903736, w: 0.8549658}
+=======
+    m_Target: {x: -0.11829536, y: -0.34109032, z: 0.043312874, w: -0.9315637}
+    speed: 2
+    m_Value: {x: -0.11829398, y: -0.34108633, z: 0.043312367, w: -0.93155277}
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
   m_Size:
     m_Target: 8.692374
     speed: 2
@@ -664,7 +793,11 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 585.60004
+=======
+    x: 307.2
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 80.8
     width: 614
     height: 413
@@ -677,7 +810,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
   m_TargetSize: {x: 614, y: 392}
+=======
+  m_TargetSize: {x: 911, y: 392}
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -692,8 +829,13 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -245.6
     m_HBaseRangeMax: 245.6
+=======
+    m_HBaseRangeMin: -364.4
+    m_HBaseRangeMax: 364.4
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     m_VBaseRangeMin: -156.8
     m_VBaseRangeMax: 156.8
     m_HAllowExceedBaseRangeMin: 1
@@ -713,16 +855,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 614
       height: 392
     m_Scale: {x: 1.2011244, y: 1.2011244}
     m_Translation: {x: 307, y: 196}
+=======
+      width: 911
+      height: 392
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 455.5, y: 196}
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -255.59384
       y: -163.18044
       width: 511.18768
@@ -730,6 +880,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 767.5, y: 516.25}
+=======
+      x: -455.5
+      y: -196
+      width: 911
+      height: 392
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1138.75, y: 516.25}
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -756,7 +915,11 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 346.4
+=======
+    x: 7.2000003
+>>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
     y: 514.4
     width: 854
     height: 262
