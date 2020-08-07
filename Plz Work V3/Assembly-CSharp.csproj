@@ -58,7 +58,6 @@
      <Compile Include="Assets\BrokenVector\LowPolyFencePack\Scripts\DoorController.cs" />
      <Compile Include="Assets\BrokenVector\LowPolyFencePack\Scripts\DoorToggle.cs" />
      <Compile Include="Assets\Castlear\Builder\Scripts\CastlearHistoryComponent.cs" />
-     <Compile Include="Assets\Castlear\Builder\Scripts\CastlearModulue.cs" />
      <Compile Include="Assets\Character\PlayerState.cs" />
      <Compile Include="Assets\CharacterControls.cs" />
      <Compile Include="Assets\Enemies\Helpful stuff\ChildVisionEnter.cs" />
@@ -81,7 +80,6 @@
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
-     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Standard\First person controller\Components\Crouch.cs" />
      <Compile Include="Assets\Standard\First person controller\Components\GroundCheck.cs" />
      <Compile Include="Assets\Standard\First person controller\Components\Jump.cs" />
@@ -767,61 +765,61 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TerrainTools">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProGrids">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProGrids.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ProBuilder.AddOns.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TerrainTools.Editor">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
