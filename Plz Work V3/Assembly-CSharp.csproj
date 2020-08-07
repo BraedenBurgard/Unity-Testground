@@ -2,6 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.4.6f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
+    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{ffbbf435-a479-7567-00e3-46bd673d7698}</ProjectGuid>
+    <ProjectGuid>{35F4BBFF-79A4-6775-00E3-46BD673D7698}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -28,6 +30,15 @@
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+  </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
     <NoStdLib>true</NoStdLib>
@@ -36,9 +47,18 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.6f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.6f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
      <Compile Include="Assets\BrokenVector\LowPolyFencePack\Scripts\DoorController.cs" />
      <Compile Include="Assets\BrokenVector\LowPolyFencePack\Scripts\DoorToggle.cs" />
      <Compile Include="Assets\Castlear\Builder\Scripts\CastlearHistoryComponent.cs" />
+     <Compile Include="Assets\Castlear\Builder\Scripts\CastlearModulue.cs" />
      <Compile Include="Assets\Character\PlayerState.cs" />
      <Compile Include="Assets\CharacterControls.cs" />
      <Compile Include="Assets\Enemies\Helpful stuff\ChildVisionEnter.cs" />
@@ -61,6 +81,7 @@
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Standard\First person controller\Components\Crouch.cs" />
      <Compile Include="Assets\Standard\First person controller\Components\GroundCheck.cs" />
      <Compile Include="Assets\Standard\First person controller\Components\Jump.cs" />
@@ -209,6 +230,9 @@
      <None Include="Assets\Standard\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpec.shader" />
      <None Include="Assets\Standard\Standard Assets\Fonts\OpenSans\License!.txt" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 89367839... g
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -747,6 +771,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
+<<<<<<< HEAD
  <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TerrainTools">
@@ -1399,11 +1424,69 @@
         <HintPath>C:/Users/braed/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
 >>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
+=======
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TerrainTools">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProGrids">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProGrids.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Postprocessing.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Postprocessing.Runtime">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AddOns.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TerrainTools.Editor">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Users/blaze/Documents/UnityPrjects/Project-with-jacobi/Plz Work V3/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+>>>>>>> parent of 89367839... g
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

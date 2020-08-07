@@ -1,2 +1,15 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.6f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+<<<<<<< HEAD
+=======
+Cmd: preprocess
+  insize=24053 outsize=1942 ok=1
+Cmd: preprocess
+  insize=3553 outsize=893 ok=1
+Cmd: preprocess
+  insize=23982 outsize=5414 ok=1
+Cmd: preprocess
+  insize=24215 outsize=1851 ok=1
+Cmd: preprocess
+  insize=23069 outsize=1671 ok=1
+>>>>>>> parent of 89367839... g
