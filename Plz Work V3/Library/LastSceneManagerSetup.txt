@@ -1,9 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Playground.unity
-=======
-- path: Assets/Scenes/Lvl1.unity
->>>>>>> a2e293413c83c8a7d397e9d114814062705900c3
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
+sceneSetups: []
