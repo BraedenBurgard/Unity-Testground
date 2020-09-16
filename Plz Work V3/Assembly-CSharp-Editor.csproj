@@ -47,10 +47,6 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 89367839... g
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.6f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -59,12 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
->>>>>>> parent of 71768e66... Reverted Changes to last "g" commit
-=======
-     <Compile Include="Assets\Castlear\Builder\Scripts\Editor\CastlearWindow.cs" />
->>>>>>> parent of 89367839... g
      <Compile Include="Assets\Standard\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
      <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\GerstnerDisplaceEditor.cs" />
      <Compile Include="Assets\Standard\Standard Assets\Editor\Water\Water4\PlanarReflectionEditor.cs" />

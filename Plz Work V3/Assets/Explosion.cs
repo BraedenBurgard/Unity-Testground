@@ -58,7 +58,7 @@ public class Explosion : MonoBehaviour
         }
 
         //on movableobject hit
-        else if(collider.gameObject.tag == "Movable")
+        else if(collider.gameObject.tag == "Movable" || collider.gameObject.tag == "Slime")
         {
             Vector3 direction = (collider.gameObject.transform.position - transform.position);
             direction.Normalize();
