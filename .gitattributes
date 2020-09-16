@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Plz filter=lfs diff=lfs merge=lfs -text
+Work filter=lfs diff=lfs merge=lfs -text
+V3LibraryArtifactseded13321487842e3375f7a9ac2812edf7 filter=lfs diff=lfs merge=lfs -text
+Plz[[:space:]]Work[[:space:]]V3/Library/Artifacts/ed/ed13321487842e3375f7a9ac2812edf7 filter=lfs diff=lfs merge=lfs -text
